@@ -1,0 +1,64 @@
+.area {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: var(--area-porta-largura);
+    height: var(--area-porta-altura);
+    margin: 5px;
+}
+
+.estrutura {
+    display: flex;
+    flex-grow: 1;
+    border-left: 5px solid #422b1f;
+    border-top: 5px solid #422b1f;
+    border-right: 5px solid #422b1f;
+    background-color: #0005;
+    width: 90%;
+}
+
+.porta {
+    display: flex;
+    flex-direction: column;
+    background-color: #764a24;
+    align-items: center;
+    padding: 15px;
+    flex-grow: 1;
+}
+
+.numero {
+    font-size: 3rem;
+    color: white;
+}
+
+.macaneta {
+    position: absolute;
+    display: flex;
+    align-self: flex-start;
+    top: calc(0.45 * var(--area-porta-altura));
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #422b1f;
+}
+
+.chao {
+    height: 10px;
+    width: 100%;
+    background-color: #cfc6b0;
+}
+
+.selecionada {
+    border-left: 5px solid #daa520;
+    border-top: 5px solid #daa520;
+    border-right: 5px solid #daa520;
+}
+
+.selecionada .numero{
+    color: #daa520;
+}
+
+.selecionada .macaneta{
+    background-color: #daa520;
+}
