@@ -1,3 +1,4 @@
+"use client";
 import styles from "../styles/porta.module.css";
 import Presente from "./Presente"
 import PortaModel from "../model/porta";
