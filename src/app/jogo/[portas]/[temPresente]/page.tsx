@@ -1,4 +1,4 @@
-"use client"; // Asegura que o componente será renderizado no cliente
+"use client";
 
 import styles from "../../../../styles/jogo.module.css";
 import { useState, useEffect } from "react";
