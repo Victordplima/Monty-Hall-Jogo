@@ -11,6 +11,18 @@ import { useParams } from "next/navigation";
 export default function Jogo() {
     const { portas, temPresente } = useParams();
     const [portasState, setPortas] = useState([]);
+    const [valido, setValido] = useState(false);
+
+    useEffect(() => {
+        const portasNum = +portas;
+        const temPresenteNum = +temPresente;
+
+        const qtdPortasValidas = portasNum >= 3 && portasNum <= 50;
+        const temPresenteValido =
+            temPresenteNum >= 1 && temPresenteNum <= portasNum;
+
+        setValido(qtdPortasValidas && temPresenteValido);
+    }, [portas, temPresente]);
 
     useEffect(() => {
         if (portas && temPresente) {
@@ -36,7 +48,7 @@ export default function Jogo() {
 
     return (
         <div id={styles.jogo}>
-            <div className={styles.portas}>{renderizarPortas()}</div>
+            <div className={styles.portas}>{valido ? renderizarPortas(): <h1>Valores inválidos</h1>}</div>
             <div className={styles.botoes}>
                 <Link href="/">
                     <button>Reiniciar Jogo</button>
